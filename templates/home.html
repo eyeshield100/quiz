@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+{% for question in object_list %}
+<div class="question-entry">
+<h2><a href="{% url 'question_text_detail' question.pk %}">{{ forloop.counter }}.{{ question.question_text }}</a></h2>
+</div>
+{% endfor %}
+{% endblock content %}
